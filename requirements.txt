@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# LUMINA-DS Requirements
+# Python 3.10+
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Vector Database ───────────────────────────────────────────────────────────
+pymilvus[milvus_lite]>=3.0.0
+
+# ── Embeddings (BGE-M3: dense + sparse in one model) ─────────────────────────
+FlagEmbedding>=1.2.5
+
+# ── Reranker ──────────────────────────────────────────────────────────────────
+sentence-transformers>=3.0.0
+
+# ── LLM / Orchestration ───────────────────────────────────────────────────────
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-ollama>=0.3.0
+
+# ── API Framework ─────────────────────────────────────────────────────────────
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# ── Configuration ─────────────────────────────────────────────────────────────
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+python-dotenv>=1.0.1
+
+# ── Data Handling ─────────────────────────────────────────────────────────────
+pandas>=2.2.0
+numpy>=1.26.0
+tqdm>=4.66.0
+
+# ── Text Processing ───────────────────────────────────────────────────────────
+# Included transitively via langchain, but pinned for safety
+tiktoken>=0.7.0

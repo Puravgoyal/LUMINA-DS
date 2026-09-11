@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina - Instagram Discovery</title>
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Marked.js for parsing Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Background Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <main class="container">
+    
+    <header>
+      <h1 class="logo-text">Lumina<span>.</span></h1>
+      <p class="subtitle">AI-Powered Instagram Discovery Engine</p>
+    </header>
+
+    <div class="search-panel glass">
+      <form id="search-form">
+        <div class="input-group">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="query-input" placeholder="What are you looking for? (e.g. healthy dinner recipes)" required autocomplete="off">
+          <button type="submit" id="search-btn">Discover</button>
+        </div>
+        
+        <div class="filters">
+          <label for="min-likes">Minimum Likes:</label>
+          <input type="range" id="min-likes" min="0" max="10000" step="10" value="0">
+          <span id="likes-value" class="badge">0</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Synthesizing insights from Instagram...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="hidden glass error-card">
+      <p id="error-message"></p>
+    </div>
+
+    <!-- Results Area -->
+    <div id="results" class="hidden">
+      
+      <!-- AI Answer -->
+      <div class="answer-card glass">
+        <div class="card-header">
+          <span class="badge gradient-badge">✨ AI Summary</span>
+          <span id="latency" class="latency-text"></span>
+        </div>
+        <div id="answer-content" class="markdown-body">
+          <!-- Markdown injected here -->
+        </div>
+      </div>
+
+      <!-- Sources -->
+      <h3 class="sources-title">Retrieved Sources</h3>
+      <div id="sources-grid" class="sources-grid">
+        <!-- Source cards injected here -->
+      </div>
+      
+    </div>
+
+    <!-- Post Modal -->
+    <div id="post-modal" class="modal hidden">
+      <div class="modal-content glass">
+        <span class="close-btn">&times;</span>
+        <div class="modal-header">
+          <div class="author">
+            <div class="author-avatar"></div>
+            <span id="modal-username"></span>
+          </div>
+          <div class="likes" id="modal-likes"></div>
+        </div>
+        <div class="modal-image-container">
+          <img id="modal-image" src="" alt="Post image" />
+        </div>
+        <div class="modal-text" id="modal-text"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
