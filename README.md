@@ -63,3 +63,29 @@ Navigate to [http://localhost:5500](http://localhost:5500) in your web browser. 
 
 ## 🤝 Contributing
 Contributions are welcome to optimize vector indexing, improve frontend design, or experiment with different Ollama models!
+
+---
+
+## 📊 Dataset & Citation
+
+This project utilizes the **Influencer and Brand Dataset: Sponsorship Detection**, containing 1.6M+ Instagram posts published by 38,113 influencers mentioning 26,910 brands. 
+
+### Dataset Details
+* **Source:** Request the dataset [here](https://docs.google.com/forms/d/1YD7Dl5etu0oqhYViBJD6QFV3REIqpApZAGmE3ayBdc4/edit)
+* **Size:** ~3GB JSON Metadata, ~33GB JPEG Images
+* **Sponsorship Labeling:** Posts are labeled as 'Sponsored' if they use the branded content tool or contain sponsorship-related hashtags (e.g., `#ad`, `#sponsored`, `#paidAd`). 
+
+### Citation
+If you use this dataset, please cite the original authors from their WSDM '21 publication:
+
+> "Discovering Undisclosed Paid Partnership on Social Media via Aspect-Attentive Sponsored Post Learning," Seungbae Kim, Jyun-Yu Jiang, and Wei Wang. In Proceedings of Web Search and Data Mining (WSDM '21), ACM, 2021.
+
+```bibtex
+@inproceedings{kim2021discovering,
+  title={Discovering Undisclosed Paid Partnership on Social Media via Aspect-Attentive Sponsored Post Learning},
+  author={Kim, Seungbae and Jiang, Jyun-Yu and Wang, Wei},
+  booktitle={Proceedings of the 14th ACM International Conference on Web Search and Data Mining},
+  pages={319--327},
+  year={2021}
+}
+```
